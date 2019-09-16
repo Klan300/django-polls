@@ -1,5 +1,13 @@
-## Django Polls Application
- (describe the application)
+# Django Polls Application
+## Feature
+
+- **Admin**
+    - add polls
+    - delete polls
+    - check polls status
+- **Polls**
+    - vote polls
+    - check status polls vote
 
  ## Requirements
 
@@ -10,4 +18,8 @@
 
  ## Running
 
- (how to run the application, briefly)
+1. Dowload **Django**
+2. Run **Django**
+    ```bash
+    python3 manage.py runserver
+    ```
