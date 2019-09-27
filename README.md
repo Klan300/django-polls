@@ -26,13 +26,18 @@
     git clone https://github.com/Klan300/django-polls.git
     cd django-polls
     ```
-3. migrate 
+3. Install requirement
+    ```bash
+    pip3 install -r requirement
+    ```
+ 
+4. migrate 
     ```bash
     python3 manage.py migrate
     ```
 
 
-3. Run **Django**
+5. Run **Django**
     ```bash
     python3 manage.py runserver
     ```
