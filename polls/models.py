@@ -23,3 +23,25 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+
+# def vote_count(id):
+#     """Return total votes for a given poll. id is poll id"""
+#     if id <= Question.objects.count():
+#         question = Question.objects.get(id=id)
+#         count = 0
+#         choiceSet = question.choice_set
+
+#         for i in range(choiceSet.count()):
+#             count += choiceSet.all()[i].votes
+        
+#         return count 
+#     else: 
+#         raise ValueError
+
+
+# def find_polls_for_text(text):
+#     """Return list of Question objects for all polls containing some text"""       
+#     q_list = Question.objects.filter(question_text__icontains = text)
+#     return q_list
+

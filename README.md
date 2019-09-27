@@ -19,7 +19,20 @@
  ## Running
 
 1. Dowload **Django**
-2. Run **Django**
+
+2. clone this repository
+
+    ```bash
+    git clone https://github.com/Klan300/django-polls.git
+    cd django-polls
+    ```
+3. migrate 
+    ```bash
+    python3 manage.py migrate
+    ```
+
+
+3. Run **Django**
     ```bash
     python3 manage.py runserver
     ```
