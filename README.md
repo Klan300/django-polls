@@ -18,7 +18,7 @@
 
  ## Running
 
-1. Dowload **Django**
+1. Dowload **Python3**
 
 2. clone this repository
 
