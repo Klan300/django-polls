@@ -13,7 +13,7 @@
 
  The application requires
  * Python 3.6 or newer
- * Django 2.1.2 or newer
+ * Django 2.1 or newer
  * Python add-on modules as in [requirements.tx](requirements.txt)
 
  ## Running
@@ -24,11 +24,12 @@
 
     ```bash
     git clone https://github.com/Klan300/django-polls.git
+    
     cd django-polls
     ```
 3. Install requirement
     ```bash
-    pip3 install -r requirement
+    pip3 install -r requirement.txt
     ```
  
 4. migrate 
@@ -41,3 +42,5 @@
     ```bash
     python3 manage.py runserver
     ```
+
+Creted by 6110545546 Thun Thunkijjanukij(Nathun)
