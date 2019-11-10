@@ -1,3 +1,4 @@
+
 import datetime
 
 from django.db import models
@@ -24,6 +25,8 @@ class Choice(models.Model):
     def __str__(self):
         return self.choice_text
 
+
+     
 
 # def vote_count(id):
 #     """Return total votes for a given poll. id is poll id"""

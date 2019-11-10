@@ -1,5 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
@@ -35,7 +36,13 @@ class ResultsView(generic.DetailView):
     template_name = 'polls/results.html'
 
 
+@login_required
 def vote(request, question_id):
+    """Vote for one of the answers to a question."""
+    user = request.user
+    print("current user is", user.id, "login", user.username)
+    print("Real name:", user.first_name, user.last_name)
+
     question = get_object_or_404(Question, pk=question_id)
     try:
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
@@ -52,3 +59,21 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+
+
+def signup(request):
+    """Register a new user."""
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_passwd = form.cleaned_data.get('password')
+            user = authenticate(username=username,password=raw_passwd)
+            login(request, user)
+            return redirect('polls')
+        # what if form is not valid?
+        # we should display a message in signup.html
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/signup.html', {'form': form})
